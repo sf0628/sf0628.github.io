@@ -1,1 +1,1 @@
-sophia's personal website coming soon!
+website coming soon!
