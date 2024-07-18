@@ -24,15 +24,17 @@ cd ../ client npm run build
 
 ### 4. Run the Project
 cd ../server
+
 npm start
 
 The Express server should start and you should see this output: Server is running on port 5001
 
 In a new terminal window:
+
 cd client
 npm run dev
 
-Open your browser and navigate to (http://localhost:5173)
+Open your browser and navigate to http://localhost:5173
 
 ## Additional Information
 
@@ -46,8 +48,8 @@ Open your browser and navigate to (http://localhost:5173)
 This project is licensed under the MIT License.
 
 ## Acknowledgements:
-[React] (https://reactjs.org/)
-[Express] (https://expressjs.com/)
-[Vite] (https://vitejs.dev/)
+[React](https://reactjs.org/)
+[Express](https://expressjs.com/)
+[Vite](https://vitejs.dev/)
 
 
