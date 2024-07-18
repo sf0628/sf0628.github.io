@@ -32,7 +32,7 @@ In a new terminal window:
 cd client
 npm run dev
 
-Open your browser and navigate to `http://localhost:5173`
+Open your browser and navigate to (http://localhost:5173)
 
 ## Additional Information
 
