@@ -1,12 +1,12 @@
-import { ProjectDetails } from '../../../server/src/types';
-import React from 'react';
+// import { ProjectDetails } from '../../../server/src/types';
+// import React from 'react';
 
 interface ProjectTileProps {
     // projectData: ProjectDetails;
     onClick:  () => void;
 }
 
-function ProjectTile({ onClick }) {
+function ProjectTile({ onClick }: ProjectTileProps) {
     return (
         <div className="project-tile" onClick={onClick}>
             
