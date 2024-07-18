@@ -1,4 +1,4 @@
-// import { ProjectDetails } from '@types';
+import { ProjectDetails } from '../../../server/src/types';
 import React from 'react';
 
 interface ProjectTileProps {
