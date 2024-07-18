@@ -48,8 +48,8 @@ Open your browser and navigate to http://localhost:5173
 This project is licensed under the MIT License.
 
 ## Acknowledgements:
-[React](https://reactjs.org/)
-[Express](https://expressjs.com/)
-[Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [Express](https://expressjs.com/)
+- [Vite](https://vitejs.dev/)
 
 
