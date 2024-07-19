@@ -1,6 +1,6 @@
 import express, { Request, Response, Express } from "express";
 import path from 'path';
-import { ProjectData } from "./types";
+import { ProjectData, ExperienceData } from "./types";
 
 const app: Express = express();
 const PORT = 5001;
@@ -12,6 +12,21 @@ const projects: ProjectData = {
     "urlPath": "example-project",
     "shortDescription": "This is some sample data to test out the projects UI.",
     "completed": false
+  }
+}
+
+//some example experience data
+const experiences: ExperienceData = {
+  "example job": {
+    "title": "example job",
+    "role": "developer",
+    "location": "Boston, MA",
+    "startDate": "May 2023",
+    "endDate": "May 2024",
+    "description": [
+      "blah blah this is the description blah blah."
+    ]
+
   }
 }
 
@@ -36,16 +51,20 @@ app.use((_req, res, next) => {
   APPLICATION ROUTES
 */
 
-app.get('/', (req: Request, res: Response) => {
+app.get('/', (_req: Request, res: Response) => {
   res.status(200).send("successful");
 });
 
-app.get('/projects', (req: Request, res: Response) => {
+app.get('/projects', (res: Response) => {
     res.status(200).send(projects);
 });
 
+app.get('/experiences', (res: Response) => {
+  res.status(200).send(experiences);
+});
+
 //fallback route
-app.get('*', (req: Request, res: Response) => {
+app.get('*', (res: Response) => {
   res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
 });
 

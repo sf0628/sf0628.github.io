@@ -1,15 +1,17 @@
-// import { ProjectDetails } from '../../../server/src/types';
+import { ProjectDetails } from '../../../server/src/types';
 // import React from 'react';
 
 interface ProjectTileProps {
-    // projectData: ProjectDetails;
+    projectData: ProjectDetails;
     onClick:  () => void;
 }
 
-function ProjectTile({ onClick }: ProjectTileProps) {
+function ProjectTile({ projectData, onClick }: ProjectTileProps) {
+    const project = projectData as ProjectDetails;
     return (
-        <div className="project-tile" onClick={onClick}>
-            
+        <div className='project-tile' onClick={onClick}>
+            <h2 className='project-name'>{project.name}</h2>
+            <p className='project-description'>{project.shortDescription}</p>
         </div>
     );
 }

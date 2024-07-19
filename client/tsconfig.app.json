@@ -21,11 +21,17 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path Aliases */
+    "baseUrl": "./",
+    "paths": {
+      "@types/*": ["../server/src/types/*"]
+    }
   },
   "include": [
     "src/**/*",
-    "../../server/src/**/*"
+    "../server/src/**/*"
   ],
   "exclude": [
     "node_modules"
