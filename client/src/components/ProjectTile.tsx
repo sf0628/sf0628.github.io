@@ -1,4 +1,4 @@
-import { ProjectDetails } from '../../../server/src/types';
+import { ProjectDetails } from '../types/types';
 
 interface ProjectTileProps {
     projectData: ProjectDetails;

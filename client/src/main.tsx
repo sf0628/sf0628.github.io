@@ -34,13 +34,13 @@ const router = createBrowserRouter([
       {
         path: '/resume',
         element: <ResumePage />
+      },
+      {
+        path: '/projects/:projectId',
+        element: <ProjectDetailsPage />
       }
     ]
   },
-  {
-    path: '/projects/:projectId',
-    element: <ProjectDetailsPage />
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

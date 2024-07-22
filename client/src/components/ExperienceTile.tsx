@@ -1,4 +1,4 @@
-import { ExperienceDetails } from "../../../server/src/types";
+import { ExperienceDetails } from "../types/types";
 
 interface ExperienceTileProps {
     experienceData: ExperienceDetails;

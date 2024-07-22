@@ -1,9 +1,9 @@
-import { ProjectDetails, ProjectData, ExperienceData, ExperienceDetails } from "../../../server/src/types";
+import { ProjectDetails, ProjectData, ExperienceData, ExperienceDetails } from "../types/types";
 import { useEffect, useState } from "react";
 import ExperienceTile from "../components/ExperienceTile";
 import ProjectTile from "../components/ProjectTile";
 import AboutMe from "../components/AboutMe";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface DashboardProps {}
 
@@ -12,7 +12,6 @@ function Dashboard({}: DashboardProps) {
 
   const [projects, setProjects] = useState({});
   const [experiences, setExperiences] = useState({});
-  const [isLight, setIsLight] = useState(false);
   // Load all project data onto initial page
   useEffect(() => {
     fetch("http://localhost:5001/projects", {
@@ -40,7 +39,7 @@ function Dashboard({}: DashboardProps) {
   const handleClickProjects = () => {
     navigate('/projects')
   };
-  
+
   const handleClickProjectDetails = () => {};
 
   return (

@@ -13,6 +13,10 @@ html, body {
     flex-direction: column;
 }
 
+/* hr {
+    color: transparent;
+} */
+
 body {
     margin: 0;
     padding: 0;
@@ -41,6 +45,7 @@ button:focus {
 #main-content {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap: 10px;
     background-color: transparent;
     width: max-content;
