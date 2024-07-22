@@ -3,6 +3,9 @@ export interface ProjectDetails {
     urlPath: string;
     shortDescription: string;
     completed: boolean;
+    techStack: string;
+    gitHub: string;
+    link?: string;
 }
 
 export type ProjectData = Record<string, ProjectDetails>;

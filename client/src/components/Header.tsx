@@ -7,15 +7,18 @@ interface HeaderProps {
 
 function Header({onClickHome, onClickExperience, onClickProjects, onClickResume}: HeaderProps) {
     return (
-        <div className="header-content">
+        <header className="header-content">
             <button type="button" className="home-button" onClick={onClickHome}>Sophia Fu</button>
-            <hr/>
-            <button type="button" className="menu-button" onClick={onClickExperience}>experience</button>
-            <p className="menu-slash">/ </p>
-            <button type="button" className="menu-button" onClick={onClickProjects}>projects</button>
-            <p className="menu-slash">/ </p>
-            <button type="button" className="menu-button" onClick={onClickResume}>resume</button>
-        </div>
+            <nav className="nav-menu">
+                <ul>
+                    <li><button type="button" className="menu-button text" onClick={onClickExperience}>experience</button></li>
+                    <p className="menu-slash">/ </p>
+                    <li><button type="button" className="menu-button" onClick={onClickProjects}>projects</button></li>
+                    <p className="menu-slash">/ </p>
+                    <li><button type="button" className="menu-button" onClick={onClickResume}>resume</button></li>
+                </ul>
+            </nav>
+        </header>
     )
 }
 

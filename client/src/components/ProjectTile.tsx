@@ -1,5 +1,4 @@
 import { ProjectDetails } from '../../../server/src/types';
-// import React from 'react';
 
 interface ProjectTileProps {
     projectData: ProjectDetails;

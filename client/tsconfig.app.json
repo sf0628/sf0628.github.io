@@ -26,12 +26,11 @@
     /* Path Aliases */
     "baseUrl": "./",
     "paths": {
-      "@types/*": ["../server/src/types/*"]
+      "@types/*": ["../../server/src/types/*"]
     }
   },
   "include": [
-    "src/**/*",
-    "../server/src/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"

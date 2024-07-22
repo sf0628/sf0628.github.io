@@ -11,7 +11,9 @@ const projects: ProjectData = {
     "name": "example project",
     "urlPath": "example-project",
     "shortDescription": "This is some sample data to test out the projects UI.",
-    "completed": false
+    "completed": false,
+    "techStack": "HTML",
+    "gitHub": "youtube.com"
   }
 }
 

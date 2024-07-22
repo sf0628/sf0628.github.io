@@ -8,9 +8,8 @@ interface FooterProps {
 function Footer({}: FooterProps) {
 
     return (
-        <div className="footer-content">
-            <h3>Thanks for visiting my website</h3>
-            <h2>Contact Me</h2>
+        <div className="footer">
+            <h3 className="footer-caption">Thanks for visiting my website</h3>
             <Links />
             <p>Developed by Sophia Fu, built in React and Express</p>
             <button type="button" className="dark-light-button" ></button>

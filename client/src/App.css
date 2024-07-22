@@ -1,5 +1,90 @@
-.App {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: rgb(23, 23, 23);
+    min-height: 100vh;
+    color: rgb(198, 198, 198);
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    color: rgb(209, 209, 209);
+    background: none;
+}
+
+button:hover {
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}
+
+button:focus {
+    outline: 0;
+}
+
+#main-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background-color: transparent;
+    width: max-content;
+    margin: 0px;
+    flex: 1;
+}
+
+/* Header */
+.header-content {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu li {
+    display: inline;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-button, .home-button {
+    background: none;
+    height: fit-content;
+    font-size: x-small;
+}
+
+.home-button {
+    font-weight: bolder;
+}
+
+/* Footer */
+.footer p {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: xx-small;
+}
+
+.footer-caption {
+    font-family: 'Montserrat';
+    font-weight: normal;
 }
