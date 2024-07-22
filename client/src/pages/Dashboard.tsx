@@ -2,12 +2,14 @@ import { ProjectDetails, ProjectData, ExperienceData, ExperienceDetails } from "
 import { useEffect, useState } from "react";
 import ExperienceTile from "../components/ExperienceTile";
 import ProjectTile from "../components/ProjectTile";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import AboutMe from "../components/AboutMe";
+import { Navigate, useNavigate } from "react-router-dom";
 
 interface DashboardProps {}
 
 function Dashboard({}: DashboardProps) {
+  const navigate = useNavigate();
+
   const [projects, setProjects] = useState({});
   const [experiences, setExperiences] = useState({});
   const [isLight, setIsLight] = useState(false);
@@ -31,27 +33,24 @@ function Dashboard({}: DashboardProps) {
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  const handleClickHome = () => {};
-  const handleClickExperiences = () => {};
-  const handleClickProjects = () => {};
-  const handleClickResume = () => {};
+  const handleClickExperiences = () => {
+    navigate('/experience');
+  };
 
+  const handleClickProjects = () => {
+    navigate('/projects')
+  };
+  
   const handleClickProjectDetails = () => {};
-
-  const handleChangeMode = () => {};
 
   return (
     <>
       <div id="main-content">
-        <Header
-          onClickHome={handleClickHome}
-          onClickExperience={handleClickExperiences}
-          onClickProjects={handleClickProjects}
-          onClickResume={handleClickResume}
-        />
+        <hr />
+        <AboutMe />
         <hr />
         <div className="main-projects-grid">
-          <h2>Projects</h2>
+          <h2 className="content-title">Projects</h2>
           <button
             type="button"
             className="menu-button"
@@ -59,7 +58,8 @@ function Dashboard({}: DashboardProps) {
           >
             All Projects
           </button>
-          {Object.keys(projects).map((key) => {
+        </div>
+        {Object.keys(projects).map((key) => {
             const project = projects[
               key as keyof typeof projects
             ] as ProjectDetails;
@@ -70,11 +70,10 @@ function Dashboard({}: DashboardProps) {
                 onClick={() => handleClickProjectDetails()}
               />
             );
-          })}
-        </div>
+        })}
         <hr />
         <div className="main-experiences-grid">
-          <h2>Experiences</h2>
+          <h2 className="content-title">Experiences</h2>
           <button
             type="button"
             className="menu-button"
@@ -82,15 +81,14 @@ function Dashboard({}: DashboardProps) {
           >
             All Experiences
           </button>
-          {Object.keys(experiences).map((key) => {
+        </div>
+        {Object.keys(experiences).map((key) => {
             const experience = projects[
               key as keyof typeof experiences
             ] as ExperienceDetails;
             return <ExperienceTile key={key} experienceData={experience} />;
-          })}
-        </div>
+        })}
         <hr />
-        <Footer isLight={isLight} changeMode={() => handleChangeMode()} />
       </div>
     </>
   );

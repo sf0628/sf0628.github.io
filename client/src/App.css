@@ -9,6 +9,8 @@ html, body {
     min-height: 100vh;
     color: rgb(198, 198, 198);
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -28,6 +30,7 @@ button {
 button:hover {
     color: white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-weight: bolder;
     
 }
 
@@ -43,6 +46,11 @@ button:focus {
     width: max-content;
     margin: 0px;
     flex: 1;
+    max-width: 500px;
+}
+
+.content-title {
+    font-size: medium;
 }
 
 /* Header */
@@ -68,7 +76,7 @@ button:focus {
     text-decoration: none;
 }
 
-.menu-button, .home-button {
+.menu-button, .home-button, .resume-page button {
     background: none;
     height: fit-content;
     font-size: x-small;
@@ -78,13 +86,68 @@ button:focus {
     font-weight: bolder;
 }
 
-/* Footer */
-.footer p {
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-size: xx-small;
+/* About Me */
+.about-me p {
+    font-size: x-small;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+/* Projects and Experiences */
+
+.main-projects-grid, .main-experiences-grid {
+    display: flex;
+    justify-content: space-between;
 }
 
-.footer-caption {
-    font-family: 'Montserrat';
+/* Footer */ 
+.footer p, .footer-caption {
+    font-size: xx-small;
     font-weight: normal;
+    margin-bottom: 2px;
+}
+
+/* Links */
+.links-caption {
+    font-size: small;
+}
+
+.links-content img {
+    height: 15px;
+    margin-right: 4px;
+    margin-left: 1px;
+}
+
+#github-image {
+height: 17px;
+}
+
+.links ul {
+    list-style: none;
+    display: flex;
+}
+
+.links li {
+    display: inline;
+}
+
+/* Resume */
+.resume-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centering horizationally */
+    overflow: auto; /* Allow scrolling */
+} 
+
+.resume-page button {
+    margin-top: 12%;
+    width: 200px;
+}
+
+
+#resume {
+    transform: rotate(90deg);
+    max-height: 400px;
+    max-width: 100%;
+    display: block;
+    margin-top: 15%;
 }
