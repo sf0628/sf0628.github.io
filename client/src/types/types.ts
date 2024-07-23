@@ -1,10 +1,10 @@
 export interface ProjectDetails {
     name: string;
-    urlPath: string;
+    date: string;
     shortDescription: string;
     completed: boolean;
     techStack: string;
-    gitHub: string;
+    gitHub?: string;
     link?: string;
 }
 

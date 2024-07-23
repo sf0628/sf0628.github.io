@@ -51,7 +51,7 @@ button:focus {
     width: max-content;
     margin: 0px;
     flex: 1;
-    max-width: 500px;
+    max-width: 450px;
 }
 
 .content-title {
@@ -67,12 +67,12 @@ button:focus {
     z-index: 1000;
 }
 
-.nav-menu ul {
+ul {
     list-style: none;
     display: flex;
 }
 
-.nav-menu li {
+li {
     display: inline;
 }
 
@@ -97,11 +97,34 @@ button:focus {
     margin-top: 8px;
     margin-bottom: 10px;
 }
+
 /* Projects and Experiences */
 
 .main-projects-grid, .main-experiences-grid {
     display: flex;
     justify-content: space-between;
+}
+
+.content-subtitle {
+    font-size: small;
+}
+.content-description {
+    font-size: x-small;
+}
+
+.project-tile {
+    padding: 5px;
+}
+
+.project-tile:hover {
+    border: 0.5px solid rgb(209, 209, 209);
+    border-radius: 7px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgb(52, 52, 52);
+}
+
+.project-tile-section {
+    max-width: 430px;
 }
 
 /* Footer */ 

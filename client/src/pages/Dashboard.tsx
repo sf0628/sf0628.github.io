@@ -4,43 +4,58 @@ import ExperienceTile from "../components/ExperienceTile";
 import ProjectTile from "../components/ProjectTile";
 import AboutMe from "../components/AboutMe";
 import { useNavigate } from "react-router-dom";
+import { projectData, experienceData } from "../types/data";
 
 interface DashboardProps {}
 
 function Dashboard({}: DashboardProps) {
   const navigate = useNavigate();
 
-  const [projects, setProjects] = useState({});
-  const [experiences, setExperiences] = useState({});
-  // Load all project data onto initial page
+  const [projects, setProjects] = useState<ProjectData>({});
+  const [experiences, setExperiences] = useState<ExperienceData>({});
+
+//   // Load all project data onto initial page
+//   useEffect(() => {
+//     fetch("http://localhost:5001/projects", {
+//       method: "GET",
+//     })
+//       .then((res) => res.json())
+//       .then((projectData: ProjectData) => setProjects(projectData))
+//       .catch((error) => console.error("Error fetching data:", error));
+//   }, []);
+
+//   // Load all the experience data onto initial page
+//   useEffect(() => {
+//     fetch("http://localhost:5001/experiences", {
+//       method: "GET",
+//     })
+//       .then((res) => res.json())
+//       .then((experienceData: ExperienceData) => setExperiences(experienceData))
+//       .catch((error) => console.error("Error fetching data:", error));
+//   }, []);
+
+
   useEffect(() => {
-    fetch("http://localhost:5001/projects", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((projectData: ProjectData) => setProjects(projectData))
-      .catch((error) => console.error("Error fetching data:", error));
+    setProjects(projectData);
+    console.log('Projects set:', projectData);
   }, []);
 
-  // Load all the experience data onto initial page
   useEffect(() => {
-    fetch("http://localhost:5001/experiences", {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((experienceData: ExperienceData) => setExperiences(experienceData))
-      .catch((error) => console.error("Error fetching data:", error));
+    setExperiences(experienceData);
+    console.log('Experiences set:', experienceData);
   }, []);
 
   const handleClickExperiences = () => {
-    navigate('/experience');
+    navigate(`/experience`);
   };
 
   const handleClickProjects = () => {
-    navigate('/projects')
+    navigate(`/projects`, { state: { projects, handleClickProjectDetails } })
   };
 
-  const handleClickProjectDetails = () => {};
+  const handleClickProjectDetails = (projectId: string) => {
+    navigate(`/projects/${projectId}`);
+  };
 
   return (
     <>
@@ -64,9 +79,8 @@ function Dashboard({}: DashboardProps) {
             ] as ProjectDetails;
             return (
               <ProjectTile
-                key={key}
                 projectData={project}
-                onClick={() => handleClickProjectDetails()}
+                onClick={() => handleClickProjectDetails(key)}
               />
             );
         })}
@@ -82,7 +96,7 @@ function Dashboard({}: DashboardProps) {
           </button>
         </div>
         {Object.keys(experiences).map((key) => {
-            const experience = projects[
+            const experience = experiences[
               key as keyof typeof experiences
             ] as ExperienceDetails;
             return <ExperienceTile key={key} experienceData={experience} />;
