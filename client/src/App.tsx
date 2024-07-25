@@ -22,16 +22,18 @@ function App() {
     navigate('/resume');
   };
   return (
-    <>
+    <div className="page">
       <Header
       onClickHome={handleOnClickHome}
       onClickExperience={handleOnClickExperience}
       onClickProjects={handleOnClickProjects}
       onClickResume={handleOnClickResume}
       />
-      <Outlet />
+      <div className="main">
+        <Outlet />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

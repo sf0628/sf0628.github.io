@@ -13,6 +13,7 @@ function Dashboard({}: DashboardProps) {
 
   const [projects, setProjects] = useState<ProjectData>({});
   const [experiences, setExperiences] = useState<ExperienceData>({});
+  const [isLoaded, setIsLoaded] = useState(false);
 
 //   // Load all project data onto initial page
 //   useEffect(() => {
@@ -45,12 +46,18 @@ function Dashboard({}: DashboardProps) {
     console.log('Experiences set:', experienceData);
   }, []);
 
+  useEffect(() => {
+    if (Object.keys(projects).length > 0 && Object.keys(experiences).length > 0) {
+      setIsLoaded(true);
+    }
+  }, [projects, experiences]);
+
   const handleClickExperiences = () => {
     navigate(`/experience`);
   };
 
   const handleClickProjects = () => {
-    navigate(`/projects`, { state: { projects, handleClickProjectDetails } })
+    navigate(`/projects`);
   };
 
   const handleClickProjectDetails = (projectId: string) => {
@@ -59,11 +66,12 @@ function Dashboard({}: DashboardProps) {
 
   return (
     <>
-      <div id="main-content">
+      <div id="main-content" className={isLoaded ? 'slide-in' : ''}>
         <hr />
-        <AboutMe />
+        <AboutMe isLoaded={isLoaded}/>
         <hr />
-        <div className="main-projects-grid">
+        <div className={isLoaded ? 'slide-in-parts' : ''}>
+        <div className={`main-projects-grid ${isLoaded ? 'slide-in-parts' : ''}`}>
           <h2 className="content-title">Projects</h2>
           <button
             type="button"
@@ -73,7 +81,7 @@ function Dashboard({}: DashboardProps) {
             All Projects
           </button>
         </div>
-        {Object.keys(projects).map((key) => {
+        {Object.keys(projects).slice(0, 3).map((key) => {
             const project = projects[
               key as keyof typeof projects
             ] as ProjectDetails;
@@ -84,8 +92,10 @@ function Dashboard({}: DashboardProps) {
               />
             );
         })}
+        </div>
         <hr />
-        <div className="main-experiences-grid">
+        <div className={isLoaded ? 'slide-in-parts' : ''}>
+        <div className={`main-experiences-grid ${isLoaded ? 'slide-in-parts' : ''}`}>
           <h2 className="content-title">Experiences</h2>
           <button
             type="button"
@@ -95,12 +105,13 @@ function Dashboard({}: DashboardProps) {
             All Experiences
           </button>
         </div>
-        {Object.keys(experiences).map((key) => {
+        {Object.keys(experiences).slice(0, 3).map((key) => {
             const experience = experiences[
               key as keyof typeof experiences
             ] as ExperienceDetails;
             return <ExperienceTile key={key} experienceData={experience} />;
         })}
+        </div>
         <hr />
       </div>
     </>

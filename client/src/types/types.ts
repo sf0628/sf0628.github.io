@@ -4,19 +4,21 @@ export interface ProjectDetails {
     shortDescription: string;
     completed: boolean;
     techStack: string;
-    gitHub?: string;
-    link?: string;
+    gitHub: string;
+    link: string;
+    image?: string;
+    video?: string;
 }
 
 export type ProjectData = Record<string, ProjectDetails>;
 
 export interface ExperienceDetails {
-    title: string;
+    company: string;
     role: string;
     location: string;
     startDate: string;
     endDate?: string;
-    description: string[];
+    description: string;
 
 }
 
