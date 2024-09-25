@@ -1,6 +1,5 @@
-import resume from '../icons/july-24-resume.png';
-import resumePDF from '../icons/july-24-resume.pdf';
-import { useState } from 'react';
+import resume from '../icons/sept-24-resume.png';
+import resumePDF from '../icons/sept-24-resume.pdf';
 
 interface ResumePageProp {
     

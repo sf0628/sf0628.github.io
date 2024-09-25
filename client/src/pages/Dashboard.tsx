@@ -14,28 +14,7 @@ function Dashboard({}: DashboardProps) {
   const [projects, setProjects] = useState<ProjectData>({});
   const [experiences, setExperiences] = useState<ExperienceData>({});
   const [isLoaded, setIsLoaded] = useState(false);
-
-//   // Load all project data onto initial page
-//   useEffect(() => {
-//     fetch("http://localhost:5001/projects", {
-//       method: "GET",
-//     })
-//       .then((res) => res.json())
-//       .then((projectData: ProjectData) => setProjects(projectData))
-//       .catch((error) => console.error("Error fetching data:", error));
-//   }, []);
-
-//   // Load all the experience data onto initial page
-//   useEffect(() => {
-//     fetch("http://localhost:5001/experiences", {
-//       method: "GET",
-//     })
-//       .then((res) => res.json())
-//       .then((experienceData: ExperienceData) => setExperiences(experienceData))
-//       .catch((error) => console.error("Error fetching data:", error));
-//   }, []);
-
-
+  
   useEffect(() => {
     setProjects(projectData);
     console.log('Projects set:', projectData);

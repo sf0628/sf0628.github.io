@@ -19,7 +19,7 @@ export interface ExperienceDetails {
     startDate: string;
     endDate?: string;
     description: string;
-
+    details: string[];
 }
 
 export type ExperienceData = Record<string, ExperienceDetails>;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { experienceData } from "../types/data";
 import { ExperienceData, ExperienceDetails } from "../types/types";
-import ExperienceTile from "../components/ExperienceTile";
+import ExperienceDetailTile from "../components/ExperienceDetailTile";
 
 interface ExperiencePageProps {
 
@@ -24,7 +24,7 @@ function ExperiencePage({}: ExperiencePageProps) {
             const experience = experiences[
               key as keyof typeof experiences
             ] as ExperienceDetails;
-            return <ExperienceTile key={key} experienceData={experience} />;
+            return <ExperienceDetailTile key={key} experienceData={experience} />;
             })}
             </div>
         </div>
